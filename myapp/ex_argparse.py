@@ -16,8 +16,8 @@ def parse_arguments(arguments: List[str]):
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--read-from', metavar='FILE', dest='file_in', help='Read from FILE (default STDIN)', default=sys.stdin, type=argparse.FileType('r'))
     parser.add_argument('-o', '--write-to', metavar='FILE', dest='file_out', help='Write to FILE (default STDOUT)', default=sys.stdout, type=argparse.FileType('w'))
-    parser.add_argument('-v', '--verbose', dest='verbose', action='store_true', help='Write to FILE (default STDOUT)')
-    parser.add_argument('-q', '--quiet', dest='verbose', action='store_false', help='Write to FILE (default STDOUT)')
+    parser.add_argument('-v', '--verbose', dest='verbose', action='store_true', help='Print debug information')
+    parser.add_argument('-q', '--quiet', dest='verbose', action='store_false', help='Suppress output')
     args = parser.parse_args(arguments)
     return args
 
